@@ -1,31 +1,22 @@
 const express = require('express')
 const router = express.Router()
 
+const dishesCtrl = require('../controllers/dishes')
+
 //dishes index 
-router.get("/", async (req, res) => {
-	res.status(200).json({message: "dishes index route"})
-});
+router.get("/", dishesCtrl.index)
 
 //dishes create 
-router.post("/", async (req, res) =>  {
-	res.status(201).json({message: "dishes create route"})
-});
+router.post("/", dishesCtrl.create)
 
 //dishes show
-router.get("/:id", (req, res) => {
-	res.status(200).json({message: "dishes show route: " + req.params.id })
-});
+router.get("/:id", dishesCtrl.show)
 
 //dishes delete
-router.delete("/:id", (req, res) => {
-	res.status(200).json({message: "dishes delete route: " + req.params.id })
-});
+router.delete("/:id", dishesCtrl.delete)
 
 //dishes update
-router.put("/:id", (req, res) => {
-	console.log(req.body)
-	res.status(200).json({message: "dishes update route: " + req.params.id })
-});
+router.put("/:id", dishesCtrl.update)
 
 
 module.exports = router
