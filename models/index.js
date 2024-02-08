@@ -9,3 +9,7 @@ module.exports = {
 module.exports = {
     Ingredient: require('./Ingredient')
 }
+
+module.exports = {
+    Review: require('./Review')
+}

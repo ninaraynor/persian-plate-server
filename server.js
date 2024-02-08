@@ -14,6 +14,7 @@ const morgan = require("morgan")
 const dishesRouter = require('./routes/dishes')
 const recipesRouter = require('./routes/recipes')
 const ingredientsRouter = require('./routes/ingredients')
+const reviewsRouter = require('./routes/reviews')
 
 
 // Middleware
@@ -25,7 +26,8 @@ app.use(morgan("dev"));
 
 app.use('/dishes', dishesRouter)
 app.use('/recipes', recipesRouter)
-app.use('/recipes', ingredientsRouter)
+app.use('/ingredients', ingredientsRouter)
+app.use('/reviews', reviewsRouter)
 
 // Routes
 app.get("/", (req, res) => {
