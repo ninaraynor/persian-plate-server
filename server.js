@@ -12,6 +12,8 @@ const cors = require("cors")
 const morgan = require("morgan")
 
 const dishesRouter = require('./routes/dishes')
+const recipesRouter = require('./routes/recipes')
+
 
 // Middleware
 app.use(express.urlencoded({extended:true}))
@@ -21,6 +23,7 @@ app.use(cors());
 app.use(morgan("dev"));
 
 app.use('/dishes', dishesRouter)
+app.use('/recipes', recipesRouter)
 
 // Routes
 app.get("/", (req, res) => {
