@@ -5,3 +5,7 @@ module.exports = {
 module.exports = {
     Recipe: require('./Recipe')
 }
+
+module.exports = {
+    Ingredient: require('./Ingredient')
+}
