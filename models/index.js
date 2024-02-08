@@ -1,19 +1,9 @@
 module.exports = {
-    Dish: require('./Dish')
-}
-
-module.exports = {
-    Recipe: require('./Recipe')
-}
-
-module.exports = {
-    Ingredient: require('./Ingredient')
-}
-
-module.exports = {
-    Review: require('./Review')
-}
-
-module.exports = {
-    Comment: require('./Comment')
-}
+    Dish: require('./Dish'),
+    Recipe: require('./Recipe'),
+    Ingredient: require('./Ingredient'),
+    Review: require('./Review'),
+    Comment: require('./Comment'),
+    User: require('./User'),
+    Post: require('./Post')
+};

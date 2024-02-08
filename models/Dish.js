@@ -8,4 +8,4 @@ const DishSchema = new Schema({
   },{timestamps: true});
   
   
-  module.exports = mongoose.model("Dish", DishSchema);
+module.exports = mongoose.model("Dish", DishSchema);

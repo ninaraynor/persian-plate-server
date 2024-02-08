@@ -11,4 +11,4 @@ const RecipeSchema = new Schema({
   },{timestamps: true});
   
   
-  module.exports = mongoose.model("Recipe", RecipeSchema);
+module.exports = mongoose.model("Recipe", RecipeSchema);

@@ -10,13 +10,16 @@ const app = express();
 
 const cors = require("cors")
 const morgan = require("morgan")
+const logger = require('morgan')
+
 
 const dishesRouter = require('./routes/dishes')
 const recipesRouter = require('./routes/recipes')
 const ingredientsRouter = require('./routes/ingredients')
 const reviewsRouter = require('./routes/reviews')
 const commentsRouter = require('./routes/comments')
-
+const AuthRouter = require('./routes/AuthRouter')
+const PostRouter = require('./routes/PostRouter')
 
 // Middleware
 app.use(express.urlencoded({extended:true}))
@@ -30,6 +33,8 @@ app.use('/recipes', recipesRouter)
 app.use('/ingredients', ingredientsRouter)
 app.use('/reviews', reviewsRouter)
 app.use('/comments', commentsRouter)
+app.use('/auth', AuthRouter)
+app.use('/posts', PostRouter)
 
 // Routes
 app.get("/", (req, res) => {

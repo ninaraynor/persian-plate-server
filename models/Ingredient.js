@@ -8,4 +8,4 @@ const IngredientSchema = new Schema({
   },{timestamps: true});
   
   
-  module.exports = mongoose.model("Ingredient", IngredientSchema);
+module.exports = mongoose.model("Ingredient", IngredientSchema);
