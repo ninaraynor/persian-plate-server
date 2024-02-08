@@ -15,6 +15,7 @@ const dishesRouter = require('./routes/dishes')
 const recipesRouter = require('./routes/recipes')
 const ingredientsRouter = require('./routes/ingredients')
 const reviewsRouter = require('./routes/reviews')
+const commentsRouter = require('./routes/comments')
 
 
 // Middleware
@@ -28,6 +29,7 @@ app.use('/dishes', dishesRouter)
 app.use('/recipes', recipesRouter)
 app.use('/ingredients', ingredientsRouter)
 app.use('/reviews', reviewsRouter)
+app.use('/comments', commentsRouter)
 
 // Routes
 app.get("/", (req, res) => {

@@ -13,3 +13,7 @@ module.exports = {
 module.exports = {
     Review: require('./Review')
 }
+
+module.exports = {
+    Comment: require('./Comment')
+}
