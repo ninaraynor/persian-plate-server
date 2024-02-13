@@ -10,8 +10,6 @@ const app = express();
 
 const cors = require("cors")
 const morgan = require("morgan")
-const logger = require('morgan')
-
 
 const dishesRouter = require('./routes/dishes')
 const recipesRouter = require('./routes/recipes')
