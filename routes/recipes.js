@@ -8,7 +8,7 @@ router.get("/", recipesCtrl.index)
 
 router.get("/dishes/:dishId", recipesCtrl.recipesByDish)
 
-router.get('/recipes/:recipeId", recipesCtrl.recipeDetail')
+router.get("/recipes/:recipeId", recipesCtrl.recipeDetail)
 
 //recipes show
 router.get("/:id", recipesCtrl.show)
