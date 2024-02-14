@@ -14,24 +14,6 @@ const index = async (req, res, next) => {
   }
 }
 
-// const index = async (req, res, next) => {
-//   try {
-//     const sortBy = req.query.sortBy || 'name';
-//     let sortOrder = req.query.sortOrder || 'asc';
-//     if (sortBy === 'date') {
-//       sortOrder = sortOrder === 'desc' ? -1 : 1;
-//     }
-//     if (sortBy === 'name') {
-//       let recipes = await Recipe.find({}).sort({ name: sortOrder });
-//       return res.json(recipes);
-//     }
-//     let recipes = await Recipe.find({}).sort({ [sortBy]: sortOrder });
-//     res.json(recipes);
-//   } catch (error) {
-//     res.status(400).json(error);
-//   }
-// }
-
 // Recipe create
 const create = async (req,res,next) => {
   console.log(req.body)
@@ -71,10 +53,22 @@ const update = async (req,res,next) => {
   }
 }
 
+const recipesByDish = async (req, res, next) => {
+  try {
+    res.json(
+      await Recipe.find({ recipeType: req.params.dishId })
+    )
+  }
+  catch (error) {
+    res.status(400).json(error)
+  }
+}
+
 module.exports = {
 	index,
 	create,
 	show,
   delete: deleteRecipe,
-	update
+	update,
+  recipesByDish
 }

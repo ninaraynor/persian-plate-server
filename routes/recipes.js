@@ -6,11 +6,13 @@ const recipesCtrl = require('../controllers/recipes')
 //recipes index 
 router.get("/", recipesCtrl.index)
 
-//recipes create 
-router.post("/", recipesCtrl.create)
+router.get("/dishes/:dishId", recipesCtrl.recipesByDish)
 
 //recipes show
 router.get("/:id", recipesCtrl.show)
+
+//recipes create 
+router.post("/", recipesCtrl.create)
 
 //recipes delete
 router.delete("/:id", recipesCtrl.delete)
