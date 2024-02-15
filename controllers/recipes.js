@@ -77,6 +77,16 @@ const recipeDetail = async (req, res, next) => {
   }
 }
 
+const recipesByUser = async (req, res, next) => {
+  try {
+    const userId = req.params.userId
+    const recipes = await Recipe.find({ createdBy: userId })
+    res.json(recipes)
+  } catch (error) {
+    res.status(500).json({ error: 'Internal server error. Couldn\'t find recipes by user' })
+  }
+}
+
 module.exports = {
 	index,
 	create,
@@ -84,5 +94,6 @@ module.exports = {
   delete: deleteRecipe,
 	update,
   recipesByDish,
-  recipeDetail
+  recipeDetail,
+  recipesByUser
 }
