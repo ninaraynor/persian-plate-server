@@ -10,7 +10,7 @@ router.get("/dishes/:dishId", recipesCtrl.recipesByDish)
 
 router.get("/recipes/:recipeId", recipesCtrl.recipeDetail)
 
-router.get("/recipes/users/:userId", recipesCtrl.recipesByUser)
+router.get("/users/:userId", recipesCtrl.recipesByUser)
 
 //recipes show
 router.get("/:id", recipesCtrl.show)
