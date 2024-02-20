@@ -80,6 +80,7 @@ const recipeDetail = async (req, res, next) => {
 const recipesByUser = async (req, res, next) => {
   try {
     const userId = req.params.userId
+    console.log(req.params)
     const recipes = await Recipe.find({ createdBy: userId })
     res.json(recipes)
   } catch (error) {
